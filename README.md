@@ -1,4 +1,4 @@
-# [Título del trabajo]
+# [Piedra, papel o tijera 2.0]
 
 [Piedra, papel, tijera, pistola, rayo, dragón, agua, aire, esponja, lobo, árbol, humano, serpiente, fuego, diablo]
 
