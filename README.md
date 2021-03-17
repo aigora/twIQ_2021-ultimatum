@@ -4,8 +4,8 @@
 
 ## Integrantes del equipo
 
-[Gabriel Navarro Navarro. ID: GabiNavarroNavarro.
-Jeans Darlenne Velasquez Alejandro. ID:darlennev
+[Gabriel Navarro Navarro. ID: GabiNavarroNavarro.\n
+Jeans Darlenne Velasquez Alejandro. ID:darlennev\n
 Susana Ramos Fernández. ID: susanaramos02]
 
 ## Objetivos del trabajo
