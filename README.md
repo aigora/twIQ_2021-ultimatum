@@ -1,11 +1,13 @@
 # [Título del trabajo]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[Piedra, papel, tijera, pistola, rayo, dragón, agua, aire, esponja, lobo, árbol, humano, serpiente, fuego, diablo]
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+[Gabriel Navarro Navarro. ID: GabiNavarroNavarro.
+Jeans Darlenne Velasquez Alejandro. ID:
+Susana Ramos Fernández. ID: susanaramos02]
 
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+[Realizar un programa basado en el juego "Piedra, papel o tijera" con muchas más variantes que lo hacen mucho más divertido.]
