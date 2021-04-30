@@ -10,7 +10,8 @@ struct figuras{
 int main(){
     char opcion;
     int J1, J2,num,numero,i,j=0;
-
+	
+	//Enumeramos las figuras en un orden que hemos preestablecido
 	struct figuras coleccion[15]={ {"Piedra",1}, {"Fuego",2}, {"Tijeras",3}, {"Serpiente",4}, {"Humano",5}, {"Arbol",6}, {"Lobo",7}, {"Esponja",8}, {"Papel",9}, {"Aire",10}, {"Agua",11}, {"Dragon",12}, {"Demonio",13}, {"Rayo",14}, {"Pistola",15} };
 	
 	char frase1[] = "En este juego a veces lo absurdo es superior a la realidad, no busques sentido a la logica porque ni nosotros\n lo sabemos, pero lo hemos intentado dar una explicacion.\n A continuacion te diremos que figura gana a quien y tratarle de dar una cierta logica.\n";
@@ -56,7 +57,7 @@ int main(){
         {
                       /* Opción 1: J1 vs ORDENADOR */
             case '1': printf("1.Piedra 2.Fuego  3.Tijera  4.Serpiente  5.Humano  6.Arbol  7.Lobo  8.Esponja  9.Papel  10.Aire  11.Agua  12.Dragon  13.Demonio  14.Rayo  15.Pistola\n");
-                      while(j<20) {
+                      while(j<20) { //20 es el número de rondas que tiene cada partida.
                       	printf("Seleccione su %d figura J1: ", j+1); 
 						scanf("%d",&num);  
 						for(i=0;i<15;i++){
@@ -66,6 +67,7 @@ int main(){
 							}
 							J1=num;
 						}
+			      			//int numero = rand () % (N-M+1) + M; (Este está entre M y N)
 						srand(time(NULL));
 						int numero = rand() % 16;
 						printf("La maquina ha seleccionado %d\n" ,numero);
