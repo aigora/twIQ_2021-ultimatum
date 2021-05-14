@@ -1,6 +1,7 @@
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 
 struct figuras{
 	char nombre[30];
@@ -57,8 +58,8 @@ int main(){
         {
                       /* Opción 1: J1 vs ORDENADOR */
             case '1': printf("1.Piedra 2.Fuego  3.Tijera  4.Serpiente  5.Humano  6.Arbol  7.Lobo  8.Esponja  9.Papel  10.Aire  11.Agua  12.Dragon  13.Demonio  14.Rayo  15.Pistola\n");
-                      while(j<20) { //20 es el número de rondas que tiene cada partida.
-                      	printf("Seleccione su %d figura J1: ", j+1); 
+                      while(j<1) { //1 es el número de rondas que tiene cada partida.
+                      	printf("Seleccione su figura J1: "); 
 						scanf("%d",&num);  
 						for(i=0;i<15;i++){
 							if(num==coleccion[i].num){
@@ -70,7 +71,6 @@ int main(){
 			      			//int numero = rand () % (N-M+1) + M; (Este está entre M y N)
 						srand(time(NULL));
 						int numero = rand() % 16;
-						printf("La maquina ha seleccionado %d\n" ,numero);
 						for(i=0;i<15;i++){
 							if(numero==coleccion[i].num){
 								printf("EL todo poderoso ha seleccionado:"); 
@@ -80,11 +80,143 @@ int main(){
 						}
 						printf("%d %d\n", J1,J2);
 						j++;
-					  	}
+					}
                       break;
-
                       /* Opción 2: RANKING */
             case '2': printf("\n ***RANKING*** \n");
+     				  FILE*fentrada;
+                      
+					  int dato_ganar=0;
+					  int dato_empatar=0;
+					  int dato_perder=0;
+                      
+                      //1. Abrir el fichero
+                      fentrada = fopen ("entrada.txt","r"); //Ruta relativa
+					  
+					  if(fentrada == NULL){
+					  	printf("Error en la apertura de ficheros\n");
+					  	return 0;
+					  }
+					  
+					  //2. Leer el fichero -> fscanf (PASAMOS LOS DATOS DEL FICHERO A LA MEMORIA)
+					  
+					  fscanf(fentrada,"%d\n %d\n %d\n",&dato_ganar,&dato_empatar,&dato_perder);
+					  
+					  //3. Cerrar el fichero
+					  
+					  fclose(fentrada);
+					 
+					  if(J1==1 && J2==2 || J2==3  || J2==4 || J2==5 || J2==6 || J2==7 || J2==8 ){
+						dato_ganar += 1;
+					  } else if (J1==1 && J2==9 || J2==10 || J2==11 || J2==12 || J2==13 || J2==14 || J2==15){
+						dato_perder+=1;
+					  } else if(J1==1 && J2==1){
+					  	dato_empatar+=1;
+					  } else if (J1==2 && J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9){
+					  	dato_ganar+=1;
+					  } else if(J1==2 && J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1){
+					  	dato_perder+=1;
+					  } else if(J1==2 && J2==2){
+					  	dato_empatar+=1;
+					  } else if(J1==3 && J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10){
+					  	dato_ganar+=1;
+					  } else if(J1==3 && J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2){
+					  	dato_perder+=1;
+					  } else if(J1==3 && J2==3){
+					  	dato_empatar+=1;
+					  } else if(J1==4 && J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11){
+					  	dato_ganar+=1;
+					  } else if(J1==4 && J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3){
+					  	dato_perder+=1;
+					  } else if(J1==4 && J2==4){
+					  	dato_empatar+=1;
+					  } else if(J1==5 && J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12){
+					  	dato_ganar+=1;
+					  } else if(J1==5 && J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4){
+					  	dato_perder+=1;
+					  } else if(J1==5 && J2==5){
+					  	dato_empatar+=1;
+					  } else if(J1==6 && J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13){
+					  	dato_ganar+=1;
+					  } else if(J1==6 && J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5){
+					  	dato_perder+=1;
+					  } else if(J1==6 && J2==6){
+					  	dato_empatar+=1;
+					  } else if (J1==7 && J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14){
+					  	dato_ganar+=1;
+					  } else if(J1==7 && J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6){
+					  	dato_perder+=1;
+					  } else if(J1==7 && J2==7){
+					  	dato_empatar+=1;
+					  } else if(J1==8 && J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15){
+					  	dato_ganar+=1;
+					  } else if(J1==8 && J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7){
+					  	dato_perder+=1;
+					  } else if (J1==8 && J2==8){
+					  	dato_empatar+=1;
+					  } else if(J1==9 && J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1){
+					  	dato_ganar+=1;
+					  } else if (J1==9 && J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8){
+					  	dato_perder+=1;
+					  } else if(J1==9 && J2==9){
+					  	dato_empatar+=1;
+					  } else if(J1==10 && J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2){
+					  	dato_ganar+=1;
+					  } else if (J1==10 && J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9){
+					  	dato_perder+=1;
+					  } else if(J1==10 && J2==10){
+					  	dato_empatar+=1;
+					  } else if(J1==11 && J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3){
+					  	dato_ganar+=1;
+					  } else if(J1==11 && J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10){
+					  	dato_perder+=1;
+					  } else if(J1==11 && J2==11){
+					  	dato_empatar+=1;
+					  } else if(J1==12 && J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4){
+					  	dato_ganar+=1;
+					  } else if(J1==12 && J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11){
+					  	dato_perder+=1;
+					  } else if(J1==12 && J2==12){
+					  	dato_empatar+=1;
+					  } else if(J1==13 && J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5){
+					  	dato_ganar+=1;
+					  } else if(J1==13 && J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12){
+					  	dato_perder+=1;
+					  } else if(J1==13 && J2==13){
+					  	dato_empatar+=1;
+					  } else if(J1==14 && J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6){
+					  	dato_ganar+=1;
+					  } else if(J1==14 && J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13){
+					  	dato_perder+=1;
+					  } else if(J1==14 && J2==14){
+					  	dato_empatar+=1;
+					  } else if(J1==15 && J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7){
+					  	dato_ganar+=1;
+					  } else if(J1==15 && J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14){
+					  	dato_perder+=1;
+					  } else if (J1==15 && J2==15){
+					  	dato_empatar+=1;
+					  }
+					  //4. Abrir el fichero para escritura
+					  
+					  fentrada = fopen("resultado.txt","w");
+					  
+					  if (fentrada == NULL){
+					  	printf("Error en la apertura de ficheros\n");
+					  	return 0;
+					  }
+					  
+					  //5. Entrada desde la memoria al fichero
+					  
+					  fprintf(fentrada,"%d\n %d\n %d\n",dato_ganar,dato_empatar,dato_perder);
+					  
+					  //6. Cerrar el fichero
+					  
+					  fclose(fentrada);
+					  
+					  printf("El jugador 1 lleva ganadas %d partidas\n",dato_ganar);
+					  printf("El jugador 1 lleva empatadas %d partidas\n",dato_empatar);
+					  printf("El jugador 1 lleva perdidas %d partidas\n",dato_perder);
                       break;
 
                       /* Opción 3: REGLAS */
