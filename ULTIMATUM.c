@@ -100,7 +100,7 @@ int main(){
 					}
                       break;
                       /* Opción 2: RANKING */
-            case '2': printf("\n ***RANKING*** \n");
+            case '2': printf("\n ***ULTIMA PARTIDA GANADA*** \n");
      				  FILE*fentrada;
                       
 					  int dato_ganar=0;
