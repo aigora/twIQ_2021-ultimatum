@@ -123,97 +123,97 @@ int main(){
 					  
 					  fclose(fentrada);
 					 
-					  if(J1==1 && J2==2 || J2==3  || J2==4 || J2==5 || J2==6 || J2==7 || J2==8 ){
-						dato_ganar += 1;
-					  } else if (J1==1 && J2==9 || J2==10 || J2==11 || J2==12 || J2==13 || J2==14 || J2==15){
-						dato_perder+=1;
-					  } else if(J1==1 && J2==1){
-					  	dato_empatar+=1;
-					  } else if (J1==2 && J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9){
-					  	dato_ganar+=1;
-					  } else if(J1==2 && J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1){
-					  	dato_perder+=1;
-					  } else if(J1==2 && J2==2){
-					  	dato_empatar+=1;
-					  } else if(J1==3 && J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10){
-					  	dato_ganar+=1;
-					  } else if(J1==3 && J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2){
-					  	dato_perder+=1;
-					  } else if(J1==3 && J2==3){
-					  	dato_empatar+=1;
-					  } else if(J1==4 && J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11){
-					  	dato_ganar+=1;
-					  } else if(J1==4 && J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3){
-					  	dato_perder+=1;
-					  } else if(J1==4 && J2==4){
-					  	dato_empatar+=1;
-					  } else if(J1==5 && J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12){
-					  	dato_ganar+=1;
-					  } else if(J1==5 && J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4){
-					  	dato_perder+=1;
-					  } else if(J1==5 && J2==5){
-					  	dato_empatar+=1;
-					  } else if(J1==6 && J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13){
-					  	dato_ganar+=1;
-					  } else if(J1==6 && J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5){
-					  	dato_perder+=1;
-					  } else if(J1==6 && J2==6){
-					  	dato_empatar+=1;
-					  } else if (J1==7 && J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14){
-					  	dato_ganar+=1;
-					  } else if(J1==7 && J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6){
-					  	dato_perder+=1;
-					  } else if(J1==7 && J2==7){
-					  	dato_empatar+=1;
-					  } else if(J1==8 && J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15){
-					  	dato_ganar+=1;
-					  } else if(J1==8 && J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7){
-					  	dato_perder+=1;
-					  } else if (J1==8 && J2==8){
-					  	dato_empatar+=1;
-					  } else if(J1==9 && J2==10|| J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1){
-					  	dato_ganar+=1;
-					  } else if (J1==9 && J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8){
-					  	dato_perder+=1;
-					  } else if(J1==9 && J2==9){
-					  	dato_empatar+=1;
-					  } else if(J1==10 && J2==11|| J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2){
-					  	dato_ganar+=1;
-					  } else if (J1==10 && J2==3|| J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9){
-					  	dato_perder+=1;
-					  } else if(J1==10 && J2==10){
-					  	dato_empatar+=1;
-					  } else if(J1==11 && J2==12|| J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3){
-					  	dato_ganar+=1;
-					  } else if(J1==11 && J2==4|| J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10){
-					  	dato_perder+=1;
-					  } else if(J1==11 && J2==11){
-					  	dato_empatar+=1;
-					  } else if(J1==12 && J2==13|| J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4){
-					  	dato_ganar+=1;
-					  } else if(J1==12 && J2==5|| J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11){
-					  	dato_perder+=1;
-					  } else if(J1==12 && J2==12){
-					  	dato_empatar+=1;
-					  } else if(J1==13 && J2==14|| J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5){
-					  	dato_ganar+=1;
-					  } else if(J1==13 && J2==6|| J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12){
-					  	dato_perder+=1;
-					  } else if(J1==13 && J2==13){
-					  	dato_empatar+=1;
-					  } else if(J1==14 && J2==15|| J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6){
-					  	dato_ganar+=1;
-					  } else if(J1==14 && J2==7|| J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13){
-					  	dato_perder+=1;
-					  } else if(J1==14 && J2==14){
-					  	dato_empatar+=1;
-					  } else if(J1==15 && J2==1|| J2==2|| J2==3|| J2==4|| J2==5|| J2==6|| J2==7){
-					  	dato_ganar+=1;
-					  } else if(J1==15 && J2==8|| J2==9|| J2==10|| J2==11|| J2==12|| J2==13|| J2==14){
-					  	dato_perder+=1;
-					  } else if (J1==15 && J2==15){
-					  	dato_empatar+=1;
-					  }
+					  if(J1==1 && J2>=2 && J2<=8){
+					 	dato_ganar+=1;
+					 } else if(J1==1 && J2>=9 && J2<=15){
+					 	dato_perder+=1;
+					 } else if(J1==1 && J2==1){
+					 	dato_empatar+=1;
+					 } else if(J1==2 && J2>=3 && J2<=9){
+					 	dato_ganar+=1;
+					 } else if(J1==2 && J2>=10 && J2<=1){
+					 	dato_perder+=1;
+					 } else if(J1==2 && J2==2){
+					 	dato_empatar+=1;
+					 } else if(J1==3 && J2>=4 && J2<=10){
+					 	dato_ganar+=1;
+					 } else if(J1==3 && J2>=11 && J2<=2){
+					 	dato_perder+=1;
+					 } else if(J1==3 && J2==3){
+					 	dato_empatar+=1;
+					 } else if(J1==4 && J2>=5 && J2<=11){
+					 	dato_ganar+=1;
+					 } else if(J1==4 && J2>=12 && J2<=3){
+					 	dato_perder+=1;
+					 } else if(J1==4 && J2==4){
+					 	dato_empatar+=1;
+					 } else if(J1==5 && J2>=6 && J2<=12){
+					 	dato_ganar+=1;
+					 } else if(J1==5 && J2>=13 && J2<=4){
+					 	dato_perder+=1;
+					 } else if(J1==5 && J2==5){
+					 	dato_empatar+=1;
+					 } else if(J1==6 && J2>=7 && J2<=13){
+					 	dato_ganar+=1;
+					 } else if(J1==6 && J2>=14 && J2<=5){
+					 	dato_perder+=1;
+					 } else if(J1==6 && J2==6){
+					 	dato_empatar+=1;
+					 } else if(J1==7 && J2>=8 && J2<=14){
+					 	dato_ganar+=1;
+					 } else if(J1==7 && J2>=15 && J2<=6){
+					 	dato_perder+=1;
+					 } else if(J1==7 && J2==7){
+					 	dato_empatar+=1;
+					 } else if(J1==8 && J2>=9 && J2<=15){
+					 	dato_ganar+=1;
+					 } else if(J1==8 && J2>=1 && J2<=7){
+					 	dato_perder+=1;
+					 } else if(J1==8 && J2==8){
+					 	dato_empatar+=1;
+					 } else if(J1==9 && J2>=10 && J2<=1){
+					 	dato_ganar+=1;
+					 } else if(J1==9 && J2>=2 && J2<=8){
+					 	dato_perder+=1;
+					 } else if(J1==9 && J2==9){
+					 	dato_empatar+=1;
+					 } else if(J1==10 && J2>=11 && J2<=2){
+					 	dato_ganar+=1;
+					 } else if(J1==10 && J2>=3 && J2<=9){
+					 	dato_perder+=1;
+					 } else if(J1==10 && J2==10){
+					 	dato_empatar+=1;
+					 } else if(J1==11 && J2>=12 && J2<=3){
+					 	dato_ganar+=1;
+					 } else if(J1==11 && J2>=4 && J2<=10){
+					 	dato_perder+=1;
+					 } else if(J1==11 && J2==11){
+					 	dato_empatar+=1;
+					 } else if(J1==12 && J2>=13 && J2<=4){
+					 	dato_ganar+=1;
+					 } else if(J1==12 && J2>=5 && J2<=11){
+					 	dato_perder+=1;
+					 } else if(J1==12 && J2==12){
+					 	dato_empatar+=1;
+					 } else if(J1==13 && J2>=14 && J2<=5){
+					 	dato_ganar+=1;
+					 } else if(J1==13 && J2<=6 && J2<=12){
+					 	dato_perder+=1;
+					 } else if(J1==13 && J2==13){
+					 	dato_empatar+=1;
+					 } else if(J1==14 && J2>=15 && J2<=6){
+					 	dato_ganar+=1;
+					 } else if(J1==14 && J2>=7 && J2<=13){
+					 	dato_perder+=1;
+					 } else if(J1==14 && J2==14){
+					 	dato_empatar+=1;
+					 } else if(J1==15 && J2>=1 && J2<=7){
+					 	dato_ganar+=1;
+					 } else if(J1==15 && J2>=8 && J2<=14){
+					 	dato_perder+=1;
+					 } else if(J1==15 && J2==15){
+					 	dato_empatar+=1;
+					 }
 					  //4. Abrir el fichero para escritura
 					  
 					  fentrada = fopen("resultado.txt","w");
@@ -225,7 +225,7 @@ int main(){
 					  
 					  //5. Entrada desde la memoria al fichero
 					  
-					  fprintf(fentrada,"%d\n %d\n %d\n",dato_ganar,dato_empatar,dato_perder);
+					  fprintf(fentrada,"%d\n %d\n %d\n",&dato_ganar,&dato_empatar,&dato_perder);
 					  
 					  //6. Cerrar el fichero
 					  
