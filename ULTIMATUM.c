@@ -10,7 +10,8 @@ struct figuras{
 
 int main(){
     char opcion;
-    int J1, J2,num,numero,i,j=0;
+    int J1, J2,num,numero,i,j;
+    int ganar;
 	
 	//Enumeramos las figuras en un orden que hemos preestablecido
 	struct figuras coleccion[15]={ {"Piedra",1}, {"Fuego",2}, {"Tijeras",3}, {"Serpiente",4}, {"Humano",5}, {"Arbol",6}, {"Lobo",7}, {"Esponja",8}, {"Papel",9}, {"Aire",10}, {"Agua",11}, {"Dragon",12}, {"Demonio",13}, {"Rayo",14}, {"Pistola",15} };
@@ -58,28 +59,44 @@ int main(){
         {
                       /* Opción 1: J1 vs ORDENADOR */
             case '1': printf("1.Piedra 2.Fuego  3.Tijera  4.Serpiente  5.Humano  6.Arbol  7.Lobo  8.Esponja  9.Papel  10.Aire  11.Agua  12.Dragon  13.Demonio  14.Rayo  15.Pistola\n");
-                      while(j<1) { //1 es el número de rondas que tiene cada partida.
-                      	printf("Seleccione su figura J1: "); 
+                      j=0;
+					  while(j<1) { //1 es el número de rondas que tiene cada partida.
+                      	printf("Seleccione su figura J1 (Entre 1-15): "); 
+                      	printf("(Si tu numero no está entre el rango indicado, seleccionaremos una figura por ti)\n");
 						scanf("%d",&num);  
-						for(i=0;i<15;i++){
+						for(i=1;i<15;i++){
 							if(num==coleccion[i].num){
 								printf("Su eleccion ha sido:"); 
 								printf("%s\n",coleccion[i].nombre); 
 							}
-							J1=num;
 						}
+						J1=abs(num)%15; // asegurarnos de que el numero escogido esta entre los elementos posibles.
+						
+						
 			      			//int numero = rand () % (N-M+1) + M; (Este está entre M y N)
 						srand(time(NULL));
-						int numero = rand() % 16;
-						for(i=0;i<15;i++){
+						int numero = rand() % 14+1;
+						for(i=1;i<15;i++){
 							if(numero==coleccion[i].num){
 								printf("EL todo poderoso ha seleccionado:"); 
-                		    	printf("%s\n",coleccion[i].nombre); 
+                		    		printf("%s\n",coleccion[i].nombre); 
 							}
 							J2=numero;
 						}
-						printf("%d %d\n", J1,J2);
+					
+						printf("%d  vs %d\n", J1,J2);
+						
 						j++;
+						
+						// 
+						ganar=(J1-J2);
+						if(ganar==0){
+							printf("HABEIS EMPATADO\n");
+						}else if(ganar>=1 && ganar<=7||ganar>=-14 && ganar<=-8){
+							printf("Gana el Todopoderoso. PIERDES\n");
+						}else {
+							printf("GANAS. Has ganado al Todopoderoso\n");
+						}
 					}
                       break;
                       /* Opción 2: RANKING */
@@ -220,7 +237,9 @@ int main(){
                       break;
 
                       /* Opción 3: REGLAS */
-            case '3': printf( "%s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n", frase1,frase2,frase3,frase4,frase5,frase6,frase7,frase8,frase9,frase10,frase11,frase12,frase13,frase14,frase15,frase16); 
+            case '3':   printf("\n\n En este juego tu eliges cuantas veces te quieres enfrentar con el TODOPODEROSO. Para ello debes elegir la figura correcta y que la fuerza te acompañe.\n");
+            			printf("\n\n -PERSONAJES-\n\n");
+						printf( "%s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n", frase1,frase2,frase3,frase4,frase5,frase6,frase7,frase8,frase9,frase10,frase11,frase12,frase13,frase14,frase15,frase16); 
                       break;
         }
 
