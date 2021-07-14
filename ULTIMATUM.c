@@ -8,6 +8,8 @@ struct figuras{
 	int num;
 };
 
+void imprimir(struct figuras cadena[],int num);
+
 int main(){
     char opcion;
     int J1, J2,num,numero,i,j;
@@ -37,6 +39,8 @@ int main(){
 	printf("Bienvenido jugador valiente.\n En este nueva version de piedra, papel o tijera con mas variantes podras experimentar un \n nuevo mundo de diversion.\n");
 	printf("Decide que quieres hacer a continuacion:\n");
 
+	imprimir(coleccion,15);
+
     do
     {
         printf( "\n   >>> MENU DEL JUEGO <<<");
@@ -62,7 +66,7 @@ int main(){
                       j=0;
 					  while(j<1) { //1 es el número de rondas que tiene cada partida.
                       	printf("Seleccione su figura J1 (Entre 1-15): "); 
-                      	printf("(Si tu numero no está entre el rango indicado, seleccionaremos una figura por ti)\n");
+                      	printf("(Si tu numero no esta entre el rango indicado, seleccionaremos una figura por ti)\n");
 						scanf("%d",&num);  
 						for(i=1;i<15;i++){
 							if(num==coleccion[i].num){
@@ -117,7 +121,7 @@ int main(){
 					  
 					  //2. Leer el fichero -> fscanf (PASAMOS LOS DATOS DEL FICHERO A LA MEMORIA)
 					  
-					  fscanf(fentrada,"%d\n %d\n %d\n",&dato_ganar,&dato_empatar,&dato_perder);
+					  fscanf(fentrada,"%d %d %d",&dato_ganar,&dato_empatar,&dato_perder);
 					  
 					  //3. Cerrar el fichero
 					  
@@ -224,21 +228,22 @@ int main(){
 					  }
 					  
 					  //5. Entrada desde la memoria al fichero
-					  
-					  fprintf(fentrada,"%d\n %d\n %d\n",&dato_ganar,&dato_empatar,&dato_perder);
+					
+					  fprintf(fentrada,"%d %d %d",&dato_ganar,&dato_empatar,&dato_perder);
 					  
 					  //6. Cerrar el fichero
 					  
 					  fclose(fentrada);
 					  
-					  printf("El jugador 1 lleva ganadas %d partidas\n",dato_ganar);
-					  printf("El jugador 1 lleva empatadas %d partidas\n",dato_empatar);
-					  printf("El jugador 1 lleva perdidas %d partidas\n",dato_perder);
+					  printf("El jugador 1 ha ganado %d la partida anterior\n",dato_ganar);
+					  printf("El jugador 1 ha empatado %d la partida anterior\n",dato_empatar);
+					  printf("El jugador 1 ha perdido %d la partida anterior\n",dato_perder);
                       break;
 
                       /* Opción 3: REGLAS */
-            case '3':   printf("\n\n En este juego tu eliges cuantas veces te quieres enfrentar con el TODOPODEROSO. Para ello debes elegir la figura correcta y que la fuerza te acompañe.\n");
+            case '3':   printf("\n\n En este juego tu eliges cuantas veces te quieres enfrentar con el TODOPODEROSO. Para ello debes elegir la figura correcta y que la fuerza te acompanne.\n");
             			printf("\n\n -PERSONAJES-\n\n");
+						char personajes[]="En este juego a veces lo absurdo es superior a la realidad, no busques sentido a la logica porque ni nosotros\n lo sabemos, pero lo hemos intentado dar una explicacion.\n A continuacion te diremos que figura gana a quien y tratarle de dar una cierta logica.\nAire: 'Has invocado tifon, Dios del viento y de los huracanes, enemigo de Zeus y desterrado al tartaro por este mismo.'\nDiablo: 'Has invocado al principe de las tinieblas, rey del mal.Â¿Preparados para vender tu alma?'\nLobo: 'Has invocado a Fenrir, hijo de Loki y Angrboda, guardian del Valhalla.'\nArbol: 'Has convocado a Yggdrassil, el fresno del universo, arbol de la vida, el enlace entre los 9 reinos. Arbol del\nconocimiento.'\nEsponja: 'Has invocado a Bob Esponja heredero de la burguer cangreburguer, guardian del crustaceo crujiente.'\nPapel: 'Has invocado al papel de lija.'\nDragon: 'Shenlong el 'Dios Dragon' controlador de la lluvia y el viento. Concededor de deseos.'\nSerpiente: 'Has invocado a la Hidra de Lerna, la serpiente policefala y aliento venenoso a Hija de Tifon y Equidna,  madre de Quimera.¿Preparado para ser devorado?'\nPiedra: 'Has invocado a la piedra que mato al gigante Goliat'\nFuego: 'Has invocado a Amaterasu Okami diosa del sol y del fuego'\nTijera: 'Has invocado a las tijeras de sierra.'\nPistola: 'Has invocado al fusil Barret M82, el fusil de francotirador semiautomatico anti-material SARTS de calibre 50'\nHumano: 'Has invocado al todopoderoso Napoleon, Emperador de Europa.'\nAgua: 'Has invocado a las poderosas corrientes del triangulo de las Bermudas, responsable de gran cantidad de misteriosas desapariciones.'\nRayo: 'Has invocado al arma más poderosa y destructiva de Zeus el Trueno'\n";
 						printf( "%s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n %s\n", frase1,frase2,frase3,frase4,frase5,frase6,frase7,frase8,frase9,frase10,frase11,frase12,frase13,frase14,frase15,frase16); 
                       break;
         }
@@ -246,4 +251,12 @@ int main(){
     } while ( opcion != '4' );
 
     return 0;
+}
+
+void imprimir(struct figuras coleccion[15],int num){
+    int i;
+    for(i=0;i<15;i++)
+    {
+        printf("%s %d\n", coleccion[i].nombre, coleccion[i].num);
+    }
 }
